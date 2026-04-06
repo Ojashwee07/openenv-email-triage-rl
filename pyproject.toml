@@ -1,0 +1,16 @@
+[project]
+name = "openenv-email-triage"
+version = "0.1.0"
+description = "OpenEnv email triage environment with RL"
+authors = [
+    {name = "Ojashwee"}
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "openai"
+]
+
+[tool.openenv]
+entrypoint = "app.py"
