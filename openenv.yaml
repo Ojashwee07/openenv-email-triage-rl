@@ -1,0 +1,20 @@
+name: email_triage_env
+version: 1.0
+entrypoint: app.py
+
+observation:
+  email_text: string
+  sender: string
+  urgency: int
+  step_count: int
+
+action:
+  action_type: string
+
+reward:
+  value: float
+
+tasks:
+  - easy
+  - medium
+  - hard
