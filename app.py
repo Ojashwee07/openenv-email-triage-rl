@@ -7,7 +7,7 @@ env = EmailEnv()
 
 @app.get("/")
 def root():
-    return {"status":"ok"}
+    return {"status": "ok"}
 
 @app.post("/reset")
 def reset():
@@ -16,7 +16,12 @@ def reset():
 @app.post("/step")
 def step(action: Action):
     obs, reward, done, info = env.step(action)
-    return {"observation":obs.dict(),"reward":reward.value,"done":done,"info":info}
+    return {
+        "observation": obs.dict(),
+        "reward": reward.value,
+        "done": done,
+        "info": info
+    }
 
 @app.get("/state")
 def state():
