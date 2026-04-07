@@ -6,23 +6,21 @@ app = FastAPI()
 env = EmailEnv()
 
 @app.get("/")
-def root():
+def home():
     return {"status": "ok"}
 
 @app.post("/reset")
 def reset():
-    return env.reset().dict()
+    obs = env.reset()
+    return obs.dict()
 
 @app.post("/step")
-def step(action: Action):
-    obs, reward, done, info = env.step(action)
+def step():
+    action = Action(action_type="reply")
+    obs, reward, done, _ = env.step(action)
+
     return {
         "observation": obs.dict(),
         "reward": reward.value,
-        "done": done,
-        "info": info
+        "done": done
     }
-
-@app.get("/state")
-def state():
-    return env.state()
