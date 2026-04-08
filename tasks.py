@@ -1,5 +1,4 @@
-
-Copy
+from graders import grade_easy, grade_medium, grade_hard
 
 TASKS = [
     {
@@ -8,10 +7,7 @@ TASKS = [
         "sender": "customer",
         "urgency": 2,
         "correct_action": "reply",
-        "grader": {
-            "type": "exact_match",
-            "expected_action": "reply"
-        }
+        "grader": grade_easy          # ✅ Grader added
     },
     {
         "id": "medium",
@@ -19,10 +15,7 @@ TASKS = [
         "sender": "customer",
         "urgency": 6,
         "correct_action": "escalate",
-        "grader": {
-            "type": "exact_match",
-            "expected_action": "escalate"
-        }
+        "grader": grade_medium        # ✅ Grader added
     },
     {
         "id": "hard",
@@ -30,9 +23,6 @@ TASKS = [
         "sender": "client",
         "urgency": 9,
         "correct_action": "escalate",
-        "grader": {
-            "type": "exact_match",
-            "expected_action": "escalate"
-        }
-    }
+        "grader": grade_hard          # ✅ Grader added
+    },
 ]
