@@ -22,3 +22,9 @@ tasks:
     grader: graders.grade_medium
   - id: hard
     grader: graders.grade_hard
+  - id: newsletter
+    grader: graders.grade_archive
+  - id: info_request
+    grader: graders.grade_info
+  - id: critical
+    grader: graders.grade_critical
