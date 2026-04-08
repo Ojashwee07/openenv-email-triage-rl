@@ -1,13 +1,11 @@
-from fastapi import FastAPI
-
-app = FastAPI()
-
-@app.get("/")
-def root():
-    return {"message": "Space is running"}
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+from app import app
 
 def main():
-    print("Server started")
+    import uvicorn
+    port = int(os.environ.get("PORT", 7860))
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=False)
 
 if __name__ == "__main__":
     main()
