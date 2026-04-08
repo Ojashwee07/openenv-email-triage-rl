@@ -16,6 +16,9 @@ reward:
   value: float
 
 tasks:
-  - easy
-  - medium
-  - hard
+  - id: easy
+    grader: graders.grade_easy
+  - id: medium
+    grader: graders.grade_medium
+  - id: hard
+    grader: graders.grade_hard
